@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./myStyle.css">
+    <title>JS30_03</title>
+</head>
+
+<body>
+    <h1>Update CSS variable with <span id="titleJs">JS</span></h1>
+    <div id="changeCss">
+        <span>spacing</span>
+        <input id="changeBorder" name="changeBorder" type="range" min="10" max="300" value="10" />
+        <span>blur</span>
+        <input id="changeBlur" name="changeBlur" type="range" min="0" max="20" value="0" />
+        <span>bdcolor</span>
+        <input id="changeColor" name="changeColor" type="color" min="0" max="100" value="#000000" width='1000' />
+    </div>
+
+    <div id="myImg">
+        <img id="Img1" src="./img/1.jpg" alt="" width="120" height="80" onclick="changeImg(1)">
+        <img id="Img2" src="./img/2.jpg" alt="" width="120" height="80" onclick="changeImg(2)">
+        <img id="Img3" src="./img/3.jpg" alt="" width="120" height="80" onclick="changeImg(3)">
+    </div>
+
+    <div id="demo">
+        <img id="demoImg" src="./img/1.jpg" alt="" width="800" height="600">
+    </div>
+
+    <script>
+        // onchange只會在滑鼠放開時產生效果
+        // oninput在拖曳時就產生效果
+
+        // 改變border大小
+        document.getElementById('changeBorder').addEventListener('input', function () {
+            document.getElementById('demo').style.borderWidth = `${document.getElementById('changeBorder').value}px`;
+        })
+
+        // 改變blur數值
+        document.getElementById('changeBlur').addEventListener('input', function () {
+            document.getElementById('demo').style.filter = `blur(${document.getElementById('changeBlur').value}px)`;
+        })
+
+        // 改變border顏色及標題文字顏色
+        document.getElementById('changeColor').addEventListener('input', function () {
+            document.getElementById('demo').style.borderColor = `${document.getElementById('changeColor').value}`;
+            document.getElementById('titleJs').style.color = `${document.getElementById('changeColor').value}`;
+        })
+
+        // onclick修改圖片
+        function changeImg(x) {
+            document.getElementById(`Img${x}`).addEventListener('click', function () {
+                document.getElementById('demoImg').src = `./img/${x}.jpg`
+            })
+        }
+    </script>
+</body>
+</html>

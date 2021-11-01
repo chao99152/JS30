@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./myStyle.css">
+    <title>JS30_02</title>
+</head>
+
+<body>
+    <div id="demo">
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+        <div class="t12">12</div>
+        <div class="t1">1</div>
+        <div class="t11">11</div>
+        <div class="t2">2</div>
+        <div class="t10">10</div>
+        <div class="t3">3</div>
+        <div class="t9">9</div>
+        <div class="t4">4</div>
+        <div class="t8">8</div>
+        <div class="t5">5</div>
+        <div class="t7">7</div>
+        <div class="t6">6</div>
+    </div>
+
+    <div id="showDate">
+        <div id="myYear" class="myDate"></div>
+        <div id="myMonth" class="myDate"></div>
+        <div id="myDate" class="myDate"></div>
+    </div>
+    <div id="showTime">
+        <div id="myDay"></div>
+        <div id="mytimeHour" class="mytime1"></div><span class="mytime2">:</span>
+        <div id="mytimeMinutes" class="mytime1"></div><span class="mytime2">:</span>
+        <div id="mytimeSeconds" class="mytime1"></div>
+    </div>
+
+    <script>
+        function clock() {
+            var date = new Date()
+            // 依時間修改時針、分針、秒針角度
+            document.getElementById('seconds').style.transform = `rotateZ(${date.getSeconds() * 6 - 90}deg)`;
+            document.getElementById('minutes').style.transform = `rotateZ(${(date.getMinutes() * 6 - 90) + date.getSeconds() / 10}deg)`;
+            document.getElementById('hours').style.transform = `rotateZ(${(date.getHours() * 30 - 90) + (date.getMinutes() / 2)}deg)`;
+
+            // 在畫面上顯示目前時間、日期
+            document.getElementById('myYear').innerHTML = date.getFullYear();
+            document.getElementById('myDate').innerHTML = date.getDate().toString().padStart(2, '0');;
+            document.getElementById('mytimeSeconds').innerHTML = date.getSeconds().toString().padStart(2, '0');
+            document.getElementById('mytimeMinutes').innerHTML = date.getMinutes().toString().padStart(2, '0');
+            document.getElementById('mytimeHour').innerHTML = date.getHours().toString().padStart(2, '0');
+
+            // 在畫面顯示月份 => +1才是正確的月份
+            switch (date.getMonth()) {
+                case 0:
+                    document.getElementById('myMonth').innerHTML = 'Jan'
+                    break;
+                case 1:
+                    document.getElementById('myMonth').innerHTML = 'Feb'
+                    break;
+                case 2:
+                    document.getElementById('myMonth').innerHTML = 'Mar'
+                    break;
+                case 3:
+                    document.getElementById('myMonth').innerHTML = 'Apr'
+                    break;
+                case 4:
+                    document.getElementById('myMonth').innerHTML = 'May'
+                    break;
+                case 5:
+                    document.getElementById('myMonth').innerHTML = 'June'
+                    break;
+                case 6:
+                    document.getElementById('myMonth').innerHTML = 'July'
+                    break;
+                case 7:
+                    document.getElementById('myMonth').innerHTML = 'Aug'
+                    break;
+                case 8:
+                    document.getElementById('myMonth').innerHTML = 'Sep'
+                    break;
+                case 9:
+                    document.getElementById('myMonth').innerHTML = 'Oct'
+                    break;
+                case 10:
+                    document.getElementById('myMonth').innerHTML = 'Nov'
+                    break;
+                case 11:
+                    document.getElementById('myMonth').innerHTML = 'Dec'
+                    break;
+            }
+
+            // 在畫面顯示星期幾
+            switch (date.getDay()) {
+                case 0:
+                    document.getElementById('myDay').innerHTML = 'Sun'
+                    break;
+                case 1:
+                    document.getElementById('myDay').innerHTML = 'Mon'
+                    break;
+                case 2:
+                    document.getElementById('myDay').innerHTML = 'Thu'
+                    break;
+                case 3:
+                    document.getElementById('myDay').innerHTML = 'Wen'
+                    break;
+                case 4:
+                    document.getElementById('myDay').innerHTML = 'Thu'
+                    break;
+                case 5:
+                    document.getElementById('myDay').innerHTML = 'Fri'
+                    break;
+                case 6:
+                    document.getElementById('myDay').innerHTML = 'Sat'
+                    break;
+            }
+        }
+        // 先執行一次讓畫面直接呈現目前時間
+        clock();
+        setInterval(clock, 1000)
+    </script>
+</body>
+
+</html>

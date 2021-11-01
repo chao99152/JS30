@@ -1,0 +1,271 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(108, 184, 214, 0.3);
+}
+
+#demo {
+    width: 600px;
+    height: 600px;
+    outline: black 20px solid;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+
+    margin-top: -400px;
+    margin-left: -300px;
+
+    box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+#hours {
+    background-color: black;
+    border-radius: 20px;
+    height: 2%;
+    width: 25%;
+
+    position: relative;
+    top: 51%;
+    left: 50%;
+
+    margin-top: -4px;
+    margin-left: -4px;
+
+    transform-origin: 0px 50%;
+
+    z-index: 0
+}
+
+#minutes {
+    background-color: black;
+    border-radius: 20px;
+    height: 1%;
+    width: 33%;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -4px;
+    margin-left: -4px;
+
+    transform-origin: 0px 50%;
+
+    z-index: 1
+}
+
+#seconds {
+    border: 1px rgb(192, 40, 40) solid;
+    border-radius: 10px;
+    width: 38%;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -4px;
+    margin-left: -4px;
+
+    transform-origin: 0px 50%;
+    z-index: 8;
+}
+
+#time {
+    margin: 0px auto;
+}
+
+.t12 {
+    font-size: 4rem;
+    letter-spacing: -6px;
+    position: relative;
+    left: 49%;
+
+    margin-left: -36px;
+    margin-top: -10px
+}
+
+.t1 {
+    font-size: 4rem;
+    position: relative;
+    left: 70%;
+
+    margin-top: -50px
+}
+
+.t11 {
+    font-size: 4rem;
+    letter-spacing: -6px;
+    position: relative;
+    left: 23%;
+
+    margin-top: -102px;
+}
+
+.t2 {
+    font-size: 4rem;
+    position: relative;
+    left: 85%;
+
+    margin-top: -6px;
+}
+
+.t10 {
+    font-size: 4rem;
+    letter-spacing: -6px;
+    position: relative;
+    left: 8%;
+
+
+    margin-top: -102px;
+
+}
+
+.t3 {
+    font-size: 4rem;
+    position: relative;
+    left: 91%;
+    top: 28px
+}
+
+.t9 {
+    font-size: 4rem;
+    position: relative;
+    left: 3%;
+    top: 28px;
+
+    margin-top: -102px;
+}
+
+.t4 {
+    /* border: 2px solid black; */
+
+    font-size: 4rem;
+    position: relative;
+    left: 84%;
+    top: 10%;
+
+}
+
+.t8 {
+    /* border: 2px solid black; */
+    font-size: 4rem;
+    position: relative;
+    left: 8%;
+
+    margin-top: -7.1%
+}
+
+.t5 {
+    font-size: 4rem;
+    position: relative;
+    left: 70%;
+    top: 1%
+}
+
+.t7 {
+    font-size: 4rem;
+    position: relative;
+    left: 24%;
+    top: -15.6%
+}
+
+.t6 {
+    font-size: 4rem;
+    position: relative;
+    left: 46%;
+    top: -26%;
+}
+
+#showDate {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 100px;
+
+    margin: auto;
+    margin-top: 700px;
+
+}
+
+.myDate {
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    letter-spacing: 5px;
+
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#myYear {
+    width: 200px;
+
+}
+
+#myMonth {
+    width: 200px;
+    text-align: center;
+}
+
+#myDate {
+    margin-left: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+#showTime {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 500px;
+    height: 100px;
+
+    margin: auto;
+}
+
+#myDay {
+    width: 150px;
+    height: 75px;
+    line-height: 75px;
+    letter-spacing: 5px;
+
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: -10px
+}
+
+.mytime1 {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    font-size: 4rem;
+    letter-spacing: -10px;
+    padding-left: 4px;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.mytime2 {
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+
+    height: 75px;
+    line-height: 75px;
+}

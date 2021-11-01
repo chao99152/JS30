@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./myStyle.css">
+    <title>JS30_01</title>
+    
+</head>
+
+<body>
+    <div class="my_tst1">
+        <div id="my_tst_Item65" class="my_tst_Item">A
+            <p>CLAP</p>
+        </div>
+        <div id="my_tst_Item83" class="my_tst_Item">S
+            <p>HiHAT</p>
+        </div>
+        <div id="my_tst_Item68" class="my_tst_Item">D
+            <p>KICK</p>
+        </div>
+        <div id="my_tst_Item70" class="my_tst_Item">F
+            <p>OPENHAT</p>
+        </div>
+        <div id="my_tst_Item71" class="my_tst_Item">G
+            <p>EXPLOSION</p>
+        </div>
+        <div id="my_tst_Item72" class="my_tst_Item">H
+            <p>DOG</p>
+        </div>
+        <div id="my_tst_Item74" class="my_tst_Item">J
+            <p>CAT</p>
+        </div>
+        <div id="my_tst_Item75" class="my_tst_Item">K
+            <p>COWBELL</p>
+        </div>
+        <div id="my_tst_Item76" class="my_tst_Item">L
+            <p>BIRD</p>
+        </div>
+    </div>
+    <script>
+        // 按下按鍵改變
+        window.addEventListener('keydown', (e) => {
+            var keys = e.keyCode
+            var clapS = new Audio('./sound/clap.wav');
+            var hihatS = new Audio('./sound/hihat.mp3');
+            var kickS = new Audio('./sound/kick.mp3');
+            var openhatS = new Audio('./sound/openhat.wav');
+            var explosionS = new Audio('./sound/explosion.wav');
+            var dogS = new Audio('./sound/dog.wav');
+            var catS = new Audio('./sound/cat.wav');
+            var cowbellS = new Audio('./sound/cowbell.wav');
+            var birdS = new Audio('./sound/bird.wav');
+            // 將事件綁定在特定的按鍵上
+            if (keys == 65 || keys == 83 || keys == 68 || keys == 70 || keys == 71 || keys == 72 || keys == 74 || keys == 75 || keys == 76) {
+                document.getElementById(`my_tst_Item${e.keyCode}`).classList.add("active");
+                switch (e.keyCode) {
+                    // 按下A
+                    case 65:
+                        // 播放音檔
+                        clapS.currentTime = 0;
+                        clapS.play();
+                        break;
+
+                    // 按下S
+                    case 83:
+                        hihatS.currentTime = 0;
+                        hihatS.play();
+                        break;
+
+                    // 按下D
+                    case 68:
+                        kickS.currentTime = 0;
+                        kickS.play();
+                        break;
+
+                    // 按下F
+                    case 70:
+                        openhatS.currentTime = 0;
+                        openhatS.play();
+                        break;
+
+                    // 按下G
+                    case 71:
+                        explosionS.currentTime = 0;
+                        explosionS.play();
+                        break;
+
+                    // 按下H
+                    case 72:
+                        dogS.currentTime = 0;
+                        dogS.play();
+                        break;
+
+                    // 按下J
+                    case 74:
+                        catS.currentTime = 0;
+                        catS.play();
+                        break;
+
+                    // 按下K
+                    case 75:
+                        cowbellS.currentTime = 0;
+                        cowbellS.play();
+                        break;
+
+                    // 按下L
+                    case 76:
+                        birdS.currentTime = 0;
+                        birdS.play();
+                        break;
+                }
+            }
+        })
+
+        window.addEventListener('keyup', function (e) {
+            var keys = e.keyCode;
+            if (keys == 65 || keys == 83 || keys == 68 || keys == 70 || keys == 71 || keys == 72 || keys == 74 || keys == 75 || keys == 76) {
+                document.getElementById(`my_tst_Item${e.keyCode}`).classList.remove("active");
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(23, 46, 95);
+}
+
+h1 {
+    color: white;
+    font-size: 4rem;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#titleJs {
+    color: black;
+}
+
+#changeCss {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#changeBorder,
+#changeBlur {
+    margin-right: 25px;
+}
+
+input {
+    width: 100px;
+}
+
+#myImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 150px;
+    margin: 50px auto;
+}
+
+#myImg>img {
+    margin: 20px;
+    cursor: pointer;
+}
+
+#myImg>img:hover {
+    width: 130px;
+    height: 90px
+}
+
+#demo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin: 50px auto;
+
+    width: 800px;
+    height: 600px;
+
+    border: 10px;
+    border-style: solid;
+    border-color: black;
+
+}

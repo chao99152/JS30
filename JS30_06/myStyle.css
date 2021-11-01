@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+ 
+
+}
+
+#demo {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+#demo > input {
+    width: 400px;
+    height: 50px;
+    font-size: 2rem;
+    padding: 5px 10px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./myStyle.css">
+    <title>JS30_05</title>
+</head>
+
+<body>
+    <div id="demo">
+        <div id="Mt1" class="demoList">
+            <div>Energetic</div>
+            <div>Inspiring</div>
+            <div>Pleasure</div>
+        </div>
+        <div id="Spring2" class="demoList">
+            <div>Spring</div>
+            <div>Spring</div>
+            <div>Spring</div>
+        </div>
+        <div id="Summer3" class="demoList">
+            <div>Summer</div>
+            <div>Summer</div>
+            <div>Summer</div>
+        </div>
+        <div id="Fall4" class="demoList">
+            <div>Fall</div>
+            <div>Fall</div>
+            <div>Fall</div>
+        </div>
+        <div id="Winter5" class="demoList">
+            <div>Winter</div>
+            <div>Winter</div>
+            <div>Winter</div>
+        </div>
+    </div>
+
+    <script>
+        const demo = document.querySelectorAll('.demoList');
+
+        // 加上節流避免連續點擊造成畫面有bug
+        function throttle(callback, limit) {
+            var wait = false;
+            return function () {
+                if (!wait) {
+                    callback.call(this);
+                    wait = true;
+                    setTimeout(function () {
+                        wait = false;
+                    }, limit);
+                }
+            }
+        }
+
+        demo.forEach(open => open.addEventListener('click', throttle(
+           function () {
+                this.classList.toggle('open');
+            }, 1000
+        )));
+
+        demo.forEach(open => open.addEventListener('transitionend', function toggleActive(e) {
+            if (e.propertyName.includes('flex')) {
+                this.classList.toggle('opentext');
+            }
+        }));
+    </script>
+</body>
+
+</html>

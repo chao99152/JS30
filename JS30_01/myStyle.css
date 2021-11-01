@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.my_tst1 {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./img/Img01.jpg);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.my_tst_Item {
+    border: 4px black solid;
+    border-radius: 5px;
+    width: 120px;
+    height: 100px;
+
+    text-align: center;
+    padding-top: 20px;
+    /* 上下置中 */
+
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.my_tst_Item.active {
+    border: 4px rgb(212, 184, 24) solid;
+
+}
+
+.my_tst_Item p {
+    color: rgb(212, 184, 24);
+    font-size: 16px;
+    font-weight: 500;
+}
